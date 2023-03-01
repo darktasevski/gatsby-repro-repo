@@ -13,14 +13,12 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
 	plugins,
 }) => {
 	actions.setWebpackConfig({
-		resolve: {
-			plugins: [
-				plugins.define({
-					__NAME__: JSON.stringify(packageJson.name),
-					__VERSION__: JSON.stringify(packageJson.version),
-					__DESC__: JSON.stringify(packageJson.description),
-				}),
-			],
-		},
+		plugins: [
+			plugins.define({
+				__NAME__: JSON.stringify(packageJson.name),
+				__VERSION__: JSON.stringify(packageJson.version),
+				__DESC__: JSON.stringify(packageJson.description),
+			}),
+		],
 	});
 };
